@@ -3,6 +3,8 @@ package com.cj.empleados01.modelo;
 import java.util.Date;
 import java.util.Objects;
 
+import com.cj.empleados01.utilidades.LeerTeclado;
+
 public class Empleados {
     
     private String nombreEmpleado;
@@ -13,6 +15,7 @@ public class Empleados {
     public Empleados() {
         
     }
+
     public Empleados(String nombre, double salario, Date fechaNacimiento) {
         this.nombreEmpleado=nombre;
         this.salarioEmpleado=salario;
@@ -66,11 +69,19 @@ public class Empleados {
 
     @Override
     public String toString() {
-        return "{" +
-            " nombreEmpleado='" + getNombreEmpleado() + "'" +
-            ", salarioEmpleado='" + getSalarioEmpleado() + "'" +
-            ", fechaNacimientoEmpleado='" + getFechaNacimientoEmpleado() + "'" +
-            "}";
+        return "Características del empleado: " + "\n" +
+            "Nombre del empleado= " + getNombreEmpleado()+ "\n" +
+            "Salario del empleado= " + getSalarioEmpleado() + "\n" +
+            "Fecha de Nacimiento= " + getFechaNacimientoEmpleado();
     }
     
+    public void crearEmpleado(){
+        this.nombreEmpleado = LeerTeclado.leerLinea("Introduce nombre empleado: ");
+        this.salarioEmpleado = LeerTeclado.leerNumeroDouble("Introduce salario del empleado: ");
+        while (this.salarioEmpleado<=0){
+            System.out.print("El salario del empleado no puede ser ni 0, ni inferior a 0. Introdúcelo de nuevo: ");
+            this.salarioEmpleado = LeerTeclado.leerNumeroDouble();
+        }
+        this.fechaNacimientoEmpleado= new Date();
+    }
 }
