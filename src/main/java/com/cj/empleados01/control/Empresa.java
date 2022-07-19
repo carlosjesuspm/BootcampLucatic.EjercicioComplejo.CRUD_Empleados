@@ -51,7 +51,7 @@ public class Empresa {
                 break;
             
             case 7:
-            servicios.incentivoGerente();
+                servicios.incentivoGerente();
                 break;
 
             case 8:

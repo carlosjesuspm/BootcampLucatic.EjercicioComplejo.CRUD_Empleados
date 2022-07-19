@@ -84,6 +84,7 @@ public class DatosEmpresa implements IDatosEmpresa{
                 if(respuestaUsuario.equalsIgnoreCase("si")){
                     listaEmpleados.remove(emp);
                     System.out.println("El empleado se ha eliminado correctamente");
+                    break;
                 }
                 else{
                     System.out.println("El empleado no se ha eliminado");
