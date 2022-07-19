@@ -58,7 +58,7 @@ public class Director extends Empleados {
     public void incentivoDirector(){
         double totalSalarioDirector= getSalarioEmpleado()* 1.1 + 100;
         this.setSalarioEmpleado(totalSalarioDirector);
-        System.out.println("El salario del director asciende a: " + this.getSalarioEmpleado() + "euros");
+        System.out.println("El salario del director asciende a: " + this.getSalarioEmpleado() + " euros");
     }
 
 }

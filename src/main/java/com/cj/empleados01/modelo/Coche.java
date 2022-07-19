@@ -9,6 +9,8 @@ public class Coche {
 
 
     public Coche() {
+        this.marcaCoche = "Chevrolet";
+        this.modeloCoche = "Hybrid";
     }
 
     public Coche(String marcaCoche, String modeloCoche) {
@@ -61,8 +63,8 @@ public class Coche {
     @Override
     public String toString() {
         return
-            "Marca del Coche= " + getMarcaCoche() + "\n" +
-            "Modelo del Coche= " + getModeloCoche();
+            "Marca del Coche= " + this.marcaCoche + "\n" +
+            "Modelo del Coche= " + this.modeloCoche;
     }
 
 }

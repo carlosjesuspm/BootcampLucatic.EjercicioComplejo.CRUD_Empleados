@@ -20,48 +20,53 @@ public class Empresa {
         } while (seguir);
     }
 
-    public void elegirOpcion() {
+    public boolean elegirOpcion() {
+        boolean continuar=true;
         int opcion = LeerTeclado.leerNumeroEntero("Introduce opción a realizar: ");
-        do{
-            switch (opcion) {
+        
+        switch (opcion) {
 
-                case 1:
-                    servicios.listaEmpleados();
-                    break;
-
-                case 2:
-                    servicios.addEmpleado();
-                    break;
-
-                case 3:
-                    servicios.addDirector();
-                    break;
-
-                case 4:
-                    servicios.addGerente();
-                    break;
-
-                case 5:
-                    servicios.modificarEmpleado();
-                    break;
-
-                case 6:
-                    servicios.eliminarEmpleado();
-                    break;
-                
-                case 7:
-                servicios.incentivoGerente();
+            case 1:
+                servicios.listaEmpleados();
                 break;
 
-                case 8:
-                    servicios.incentivoDirector();
-                    break;
+            case 2:
+                servicios.addEmpleado();
+                break;
 
-                case 0:
-                    break;
-            }
-        }while(opcion!=0);
+            case 3:
+                servicios.addDirector();
+                break;
+
+            case 4:
+                servicios.addGerente();
+                break;
+
+            case 5:
+                servicios.modificarEmpleado();
+                break;
+
+            case 6:
+                servicios.eliminarEmpleado();
+                break;
             
+            case 7:
+            servicios.incentivoGerente();
+                break;
+
+            case 8:
+                servicios.incentivoDirector();
+                break;
+
+            case 0:
+                continuar = salir();
+                break;
+        }
+        return continuar;
     }
-    
+
+    private boolean salir() {
+        String sino = LeerTeclado.leerLinea("¿Está seguro?(S/N)");
+        return (sino.toUpperCase().charAt(0) != 'S');
+    }   
 }

@@ -79,7 +79,7 @@ public class DatosEmpresa implements IDatosEmpresa{
         for (Empleados emp : listaEmpleados){
             if (emp.getNombreEmpleado().equalsIgnoreCase(solicitarNombreEmpleado)){
                 System.out.println("El usuario se encuentra en la lista.");
-                System.out.print("¿Estás seguro de que deseas eliminar a " + emp.getNombreEmpleado() + "?:");
+                System.out.print("¿Estás seguro de que deseas eliminar a " + emp.getNombreEmpleado() + "?: ");
                 String respuestaUsuario=LeerTeclado.leerLinea();
                 if(respuestaUsuario.equalsIgnoreCase("si")){
                     listaEmpleados.remove(emp);
