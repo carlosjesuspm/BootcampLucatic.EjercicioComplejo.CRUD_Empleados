@@ -2,7 +2,7 @@ package com.cj.empleados01.gui;
 
 public class Menu {
     
-    public void mostrarMenu(){
+    public static void mostrarMenu(){
 
         System.out.println("");
         System.out.println("-------------------------");
